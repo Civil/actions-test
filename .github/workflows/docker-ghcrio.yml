@@ -2,9 +2,11 @@ name: Upload Docker images to ghcr.io
 on:
   workflow_run:
     workflows: ["Tests"]
-    tags: [ 'v*' ]
     types:
       - completed
+  push:
+    tags: 
+     - [ 'v*' ]
 jobs:
   docker:
     name: Build image
