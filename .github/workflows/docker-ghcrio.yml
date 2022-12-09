@@ -1,14 +1,10 @@
 name: Upload Docker images to ghcr.io
 on:
-  workflow_run:
-    workflows: ["Tests"]
-    types:
-      - completed
+  release:
+    types: [created]
 jobs:
   docker:
     name: Build image
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
