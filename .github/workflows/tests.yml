@@ -1,0 +1,13 @@
+name: Tests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  tests:
+    name: Test code
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Do something"
+        run: echo "Test"
