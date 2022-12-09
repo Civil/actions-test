@@ -4,9 +4,9 @@ on:
     workflows: ["Tests"]
     types:
       - completed
-  push:
-    tags: 
-     - [ 'v*' ]
+    push:
+      tags: 
+       - [ 'v*' ]
 jobs:
   docker:
     name: Build image
